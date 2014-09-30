@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Helmert Map Transform</title>
+
+    <!-- ExtJS -->
+    <script type="text/javascript" src="http://cdn.sencha.com/ext/gpl/4.2.1/examples/shared/include-ext.js"></script>
+    <script type="text/javascript" src="http://cdn.sencha.com/ext/gpl/4.2.1/examples/shared/options-toolbar.js"></script>
+
+    <!-- Shared -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.sencha.com/ext/gpl/4.2.1/examples/shared/example.css" />
+    <!-- Basic example styling -->
+    <link rel="stylesheet" type="text/css" href="../geoext2/examples/shared/example.css" />
+
+    <!-- You should definitely consider using a custom single-file version of OpenLayers -->
+    <script src="http://openlayers.org/api/2.13.1/OpenLayers.js"></script>
+
+    <script type="text/javascript">
+Ext.Loader.setConfig({
+    enabled: true,
+    disableCaching: false,
+    paths: {
+        GeoExt: "../geoext2/src/GeoExt",
+        Ext: "http://cdn.sencha.com/ext/gpl/4.2.1/src"
+    }
+});
+</script>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="transformClient.js"></script>
+
+    
+</head>
+<body>
+
+
+        <div style="box-shadow: 10px 10px 5px #888888; border: 1px solid grey">
+        <p>Upload a new layer: <input type="file" id="fl"><button onclick="loadFile()">Upload</button> </p>
+        </div>
+
+        <div style="box-shadow: 10px 10px 5px #888888; border: 1px solid grey">
+        <p>
+           <button onclick="removePoints()">Clear Points</button>
+           <button onclick="transformMap()">Transform map</button>
+           <span id="error" style="color:red"></span>
+        </p>
+        </div>
+
+<div id="content">
+
+  <div id="left" style="float: left">
+        <p>Available layers: <select id='layers0'></select><button onclick="loadLayer(0)">Load</button><button onclick="updateLayers()">Refresh List</button></p>
+  </div>
+  <div id="right" style="float: left">
+        <p>Available layers: <select id='layers1'></select><button onclick="loadLayer(1)">Load</button><button onclick="updateLayers()">Refresh List</button></p>
+  </div>
+
+  <div style="clear:both;"></div>
+</div>
+
+
+
+
+</body>
+</html>
